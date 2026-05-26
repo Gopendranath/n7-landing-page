@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Chivo+Mono:wght@400&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-archivo: "Archivo", sans-serif;
+  --font-chivo-mono: "Chivo Mono", monospace;
+}
+
+body {
+  font-family: var(--font-archivo);
+  background-color: #020617;
+}
+
+html {
+  background-color: #020617;
+}
