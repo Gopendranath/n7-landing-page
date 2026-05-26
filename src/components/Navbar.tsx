@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
       <div className="backdrop-blur-[7.5px] bg-[#2F2F2F]/70 rounded-xl flex items-center w-[90vw] max-w-3xl px-4 h-[47px]">
-        <span className="font-archivo font-medium text-[#E9F4F9] text-lg leading-none flex-1">N7</span>
+        <span className="font-archivo font-normal text-[#E9F4F9] text-2xl leading-none flex-1">N7</span>
 
         <div className="flex items-center gap-6 font-chivo-mono text-sm text-[#E9F4F9]">
           {links.map((link) => (
