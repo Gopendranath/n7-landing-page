@@ -9,24 +9,28 @@ import {
   Pricing,
   FAQ,
   Contact,
+  CtaSection,
   Footer,
 } from './components'
 
 const App = () => {
   return (
-    <div className="container mx-auto px-4">
-      <Navbar />
-      <Hero />
-      <Features />
-      <About />
-      <Services />
-      <Portfolio />
-      <Testimonials />
-      <Pricing />
-      <FAQ />
-      <Contact />
+    <>
+      <div className="container mx-auto px-4">
+        <Navbar />
+        <Hero />
+        <Features />
+        <About />
+        <Services />
+        <Portfolio />
+        <Testimonials />
+        <Pricing />
+        <FAQ />
+        <Contact />
+      </div>
+      <CtaSection />
       <Footer />
-    </div>
+    </>
   )
 }
 
