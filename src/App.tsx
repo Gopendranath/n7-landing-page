@@ -5,6 +5,7 @@ import {
   DescriptiveFeatureTwo,
   CtaSectionTwo,
   AutoScrollingBanner,
+  SolutionSectionOne,
   Features,
   About,
   Services,
@@ -27,6 +28,7 @@ const App = () => {
         <DescriptiveFeatureTwo />
         <CtaSectionTwo />
         <AutoScrollingBanner />
+        <SolutionSectionOne />
         <Features />
         <About />
         <Services />
