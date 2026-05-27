@@ -1,6 +1,10 @@
 import {
   Navbar,
   Hero,
+  DescriptiveFeatureOne,
+  DescriptiveFeatureTwo,
+  CtaSectionTwo,
+  AutoScrollingBanner,
   Features,
   About,
   Services,
@@ -19,6 +23,10 @@ const App = () => {
       <div className="container mx-auto px-4">
         <Navbar />
         <Hero />
+        <DescriptiveFeatureOne />
+        <DescriptiveFeatureTwo />
+        <CtaSectionTwo />
+        <AutoScrollingBanner />
         <Features />
         <About />
         <Services />

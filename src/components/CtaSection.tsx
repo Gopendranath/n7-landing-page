@@ -1,6 +1,6 @@
 const CtaSection = () => {
   return (
-    <section className="bg-slate-950">
+    <section className="bg-[#000D12]">
       <div className="container mx-auto px-6 md:px-20">
         <div className="flex flex-col lg:flex-row items-center justify-between py-32 md:py-42 lg:py-56 gap-30">
           <div className="lg:w-1/2">

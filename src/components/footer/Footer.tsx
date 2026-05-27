@@ -4,7 +4,7 @@ import FooterBottom from './FooterBottom'
 
 const Footer = () => {
   return (
-    <footer id="footer" className="relative bg-slate-950 overflow-hidden">
+    <footer id="footer" className="relative bg-[#000D12] overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col lg:flex-row min-h-[509px] lg:py-0">
           <div className="lg:w-1/3 flex justify-center items-start">
