@@ -3,80 +3,69 @@ import DigitalBankingLogo from "./logos/DigitalBankingLogo";
 import OpenBankingLogo from "./logos/OpenBankingLogo";
 import LoanOriginationLogo from "./logos/LoanOriginationLogo";
 import LoanManagementLogo from "./logos/LoanManagementLogo";
+import LinkWithArrow from "../LinkWithArrow";
 
-const LearnMoreButton = () => {
-  return (
-    <a
-      href="#"
-      className="group inline-flex items-center gap-2 font-chivo-mono text-sm font-medium text-[#00B4FD]"
-    >
-      <span className="relative">
-        LEARN MORE
-        <span className="absolute -bottom-0.5 left-0 h-px bg-[#00B4FD] transition-all duration-500 ease-in-out w-[30%] group-hover:w-full" />
-      </span>
-      <svg
-        width="12"
-        height="12"
-        viewBox="0 0 12 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="transition-transform duration-500 ease-in-out group-hover:translate-x-0.5"
-      >
-        <path
-          d="M1 6H10.5M6 1.5L10.5 6L6 10.5"
-          stroke="#00B4FD"
-          strokeWidth="0.9"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </a>
-  );
-};
+interface ProductCard {
+  id: string;
+  title: string;
+  logo: React.ReactNode;
+  description: string;
+}
 
-const productsData = {
-  col1: [
-    {
-      id: "core-banking",
-      title: "Core Banking CB7",
-      logo: <CoreBankingLogo />,
-      description:
-        "Power your financial operations with a robust, scalable core banking platform designed for the modern era.",
-    },
-    {
-      id: "digital-banking",
-      title: "Digital Banking N7",
-      logo: <DigitalBankingLogo />,
-      description:
-        "Deliver seamless, omnichannel digital experiences that meet the expectations of todays customers.",
-    },
-    {
-      id: "open-banking",
-      title: "Open Banking",
-      logo: <OpenBankingLogo />,
-      description:
-        "Connect and innovate with secure, API-driven open banking solutions.",
-    },
-  ],
-  col2: [
-    {
-      id: "loan-origination",
-      title: "Loan Origination System",
-      logo: <LoanOriginationLogo />,
-      description:
-        "Streamline loan origination with intelligent automation and real-time decisioning.",
-    },
-    {
-      id: "loan-management",
-      title: "Loan Management System",
-      logo: <LoanManagementLogo />,
-      description:
-        "Manage your entire loan lifecycle efficiently with end-to-end oversight.",
-    },
-  ],
-};
+const productsData: ProductCard[] = [
+  {
+    id: "core-banking",
+    title: "Core Banking CB7",
+    logo: <CoreBankingLogo />,
+    description:
+      "Power your financial operations with a robust, scalable core banking platform designed for the modern era.",
+  },
+  {
+    id: "digital-banking",
+    title: "Digital Banking N7",
+    logo: <DigitalBankingLogo />,
+    description:
+      "Deliver seamless, omnichannel digital experiences that meet the expectations of todays customers.",
+  },
+  {
+    id: "open-banking",
+    title: "Open Banking",
+    logo: <OpenBankingLogo />,
+    description:
+      "Connect and innovate with secure, API-driven open banking solutions.",
+  },
+  {
+    id: "loan-origination",
+    title: "Loan Origination System",
+    logo: <LoanOriginationLogo />,
+    description:
+      "Streamline loan origination with intelligent automation and real-time decisioning.",
+  },
+  {
+    id: "loan-management",
+    title: "Loan Management System",
+    logo: <LoanManagementLogo />,
+    description:
+      "Manage your entire loan lifecycle efficiently with end-to-end oversight.",
+  },
+];
+
+const ProductCardColumn = ({ card }: { card: ProductCard }) => (
+  <div className="flex flex-col gap-2">
+    {card.logo}
+    <h3 className="font-archivo text-xl text-white">{card.title}</h3>
+    <p className="font-archivo text-md leading-relaxed text-slate-400">
+      {card.description}
+    </p>
+    <LinkWithArrow />
+  </div>
+);
 
 const HeroBottom = () => {
+  const mid = Math.ceil(productsData.length / 2);
+  const leftCol = productsData.slice(0, mid);
+  const rightCol = productsData.slice(mid);
+
   return (
     <div className="relative pb-24 overflow-hidden">
       <svg
@@ -145,37 +134,12 @@ const HeroBottom = () => {
             </div>
 
             <div className="lg:w-1/2 grid grid-cols-2 gap-x-10 gap-y-10">
-              {productsData.col1.map((card, i) => {
-                const card2 = productsData.col2[i];
-                return (
-                  <div key={card.id} className="contents">
-                    {card.logo}
-                    {card2?.logo ?? <div />}
-                    <h3 className="-mt-5 font-archivo text-xl text-white">
-                      {card.title}
-                    </h3>
-                    {card2 ? (
-                      <h3 className="-mt-5 font-archivo text-xl text-white">
-                        {card2.title}
-                      </h3>
-                    ) : (
-                      <div />
-                    )}
-                    <p className="-mt-5 font-archivo text-md leading-relaxed text-slate-400">
-                      {card.description}
-                    </p>
-                    {card2 ? (
-                      <p className="-mt-5 font-archivo text-md leading-relaxed text-slate-400">
-                        {card2.description}
-                      </p>
-                    ) : (
-                      <div />
-                    )}
-                    <div className="-mt-5"><LearnMoreButton /></div>
-                    {card2 ? <div className="-mt-5"><LearnMoreButton /></div> : <div />}
-                  </div>
-                );
-              })}
+              {Array.from({ length: Math.max(leftCol.length, rightCol.length) }).map((_, i) => (
+                <div key={i} className="contents">
+                  {leftCol[i] ? <ProductCardColumn card={leftCol[i]} /> : <div />}
+                  {rightCol[i] ? <ProductCardColumn card={rightCol[i]} /> : <div />}
+                </div>
+              ))}
             </div>
           </div>
         </div>

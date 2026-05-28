@@ -2,27 +2,11 @@ import InsightsSection from "../InsightsSection/InsightsSection";
 import row1MockupUrl from "../../assets/mobilefeatures/row1-mockup.svg";
 import row2MockupUrl from "../../assets/mobilefeatures/row2-mockup.svg";
 import row3MockupUrl from "../../assets/mobilefeatures/row3-mockup.svg";
-
-
-const CheckIcon = () => (
-  <div className="w-[22px] h-[22px] rounded-full bg-gradient-to-r from-[#00B4FD] to-[#003ACE] flex items-center justify-center flex-shrink-0 mt-0.5">
-    <svg
-      width="12"
-      height="10"
-      viewBox="0 0 12 10"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M1 5.5L4.5 9L11 1"
-        stroke="#E9F4F9"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </div>
-);
+import topMiddleBackN7 from "./topmiddlebackn7.svg";
+import middleLeftVector from "./middleleftvector.svg";
+import bottomRightSideAboveCard from "./bottomrightsideabovecard.svg";
+import CheckIcon from "../CheckIcon";
+import LinkWithArrow from "../LinkWithArrow";
 
 const mobileRows = [
   {
@@ -90,8 +74,17 @@ const mobileRows = [
 const SolutionSectionOne = () => {
   return (
     <>
-      <section className="bg-[#E9F4F9] overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-26">
+      <section className="bg-[#E9F4F9] overflow-hidden relative">
+        <div aria-hidden="true" className="absolute top-20 left-1/2 -translate-x-1/2 pointer-events-none z-0">
+          <img src={topMiddleBackN7} alt="" className="max-w-none" />
+        </div>
+        <div aria-hidden="true" className="absolute top-1/2 left-0 -translate-y-1/2 pointer-events-none z-0">
+          <img src={middleLeftVector} alt="" className="max-w-none" />
+        </div>
+        <div aria-hidden="true" className="absolute translate-y-300 right-0 pointer-events-none z-0">
+          <img src={bottomRightSideAboveCard} alt="" className="max-w-none" />
+        </div>
+        <div className="container mx-auto px-4 lg:px-26 relative z-10">
           <div className="flex flex-col lg:flex-row items-stretch py-20 lg:py-0">
             <div className="lg:w-7/15 py-20 lg:py-28 flex flex-col justify-start">
               <h2 className="font-archivo text-3xl lg:text-4xl font-bold text-[#000D12] leading-tight max-w-md">
@@ -111,31 +104,7 @@ const SolutionSectionOne = () => {
                 >
                   REQUEST DEMO
                 </a>
-                <a
-                  href="#"
-                  className="group inline-flex items-center gap-2 font-chivo-mono text-sm font-medium text-[#00B4FD]"
-                >
-                  <span className="relative">
-                    LEARN MORE
-                    <span className="absolute -bottom-0.5 left-0 h-px bg-[#00B4FD] transition-all duration-500 ease-in-out w-[30%] group-hover:w-full" />
-                  </span>
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="transition-transform duration-500 ease-in-out group-hover:translate-x-0.5"
-                  >
-                    <path
-                      d="M1 6H10.5M6 1.5L10.5 6L6 10.5"
-                      stroke="#00B4FD"
-                      strokeWidth="0.9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
+                <LinkWithArrow />
               </div>
             </div>
 
@@ -150,7 +119,7 @@ const SolutionSectionOne = () => {
                       src={row.mockup}
                       alt="Mobile app mockup"
                       className="max-w-full h-auto"
-                      style={{ maxWidth: "220px" }}
+                      style={{ maxWidth: "280px" }}
                     />
                   </div>
                   <div className="w-full lg:w-1/2 space-y-6">
@@ -165,7 +134,7 @@ const SolutionSectionOne = () => {
                     <div className="space-y-4">
                       {row.items.map((item, i) => (
                         <div key={i} className="flex gap-3">
-                          <CheckIcon />
+                          <CheckIcon size={22} />
                           <div>
                             <h4 className="font-archivo text-sm font-semibold text-[#000D12]">
                               {item.title}
@@ -215,9 +184,9 @@ const SolutionSectionOne = () => {
                     width="978.743"
                     height="978.743"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feBlend
                       mode="normal"
                       in="SourceGraphic"
@@ -293,8 +262,8 @@ const SolutionSectionOne = () => {
                     y2="-624.796"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#00B4FD" />
-                    <stop offset="1" stop-color="#003ACE" />
+                    <stop stopColor="#00B4FD" />
+                    <stop offset="1" stopColor="#003ACE" />
                   </linearGradient>
                   <linearGradient
                     id="paint1_linear_24_4200"
@@ -304,8 +273,8 @@ const SolutionSectionOne = () => {
                     y2="-38.5223"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#02171F" />
-                    <stop offset="1" stop-opacity="0" />
+                    <stop stopColor="#02171F" />
+                    <stop offset="1" stopOpacity="0" />
                   </linearGradient>
                 </defs>
               </svg>

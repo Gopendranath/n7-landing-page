@@ -1,4 +1,5 @@
 import leftMockupUrl from './assets/leftmockup.svg'
+import CheckIcon from '../CheckIcon'
 
 const features = [
   { title: 'Real-time Processing', desc: 'Instant transaction processing with real-time validation and reconciliation.' },
@@ -8,14 +9,6 @@ const features = [
   { title: 'Secure Infrastructure', desc: 'Enterprise-grade security with end-to-end encryption and monitoring.' },
   { title: 'API Integration', desc: 'Open APIs for seamless integration with third-party services.' },
 ]
-
-const CheckIcon = () => (
-  <div className="w-[18px] h-[18px] rounded-full bg-gradient-to-r from-[#00B4FD] to-[#003ACE] flex items-center justify-center flex-shrink-0 mt-1">
-    <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 3.5L4 6.5L9 1" stroke="#E9F4F9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  </div>
-)
 
 const DescriptiveFeatureTwo = () => {
   return (
@@ -39,7 +32,7 @@ const DescriptiveFeatureTwo = () => {
 
               <div className="grid grid-cols-2 gap-x-6 gap-y-7">
                 {features.map((f, i) => (
-                  <div key={i} className="flex gap-3">
+                  <div key={i} className="flex gap-3 mt-1">
                     <CheckIcon />
                     <div>
                       <h3 className="font-archivo text-base text-white">{f.title}</h3>

@@ -16,7 +16,7 @@ const Hero = () => {
             </h1>
 
             <p className="font-archivo text-lg leading-relaxed text-slate-400">
-              we drive innovation and growth, provide seamless customar experience and operational excelience.
+              we drive innovation and growth, provide seamless customer experience and operational excellence.
             </p>
 
             <div className="flex items-center gap-4 pt-4">

@@ -4,13 +4,53 @@
 @theme {
   --font-archivo: "Archivo", sans-serif;
   --font-chivo-mono: "Chivo Mono", monospace;
+
+  --color-brand-bg: #000D12;
+  --color-brand-text: #E9F4F9;
+  --color-brand-blue-start: #00B4FD;
+  --color-brand-blue-end: #003ACE;
+  --color-brand-card: #01141B;
+  --color-brand-card-accent: #07193C;
+  --color-brand-dark-card: #042A3A;
+  --color-brand-section-bg: #E9F4F9;
+  --color-brand-nav-bg: #2F2F2F;
 }
 
 body {
   font-family: var(--font-archivo);
-  background-color: #000D12;
+  background-color: var(--color-brand-bg);
 }
 
 html {
-  background-color: #000D12;
+  background-color: var(--color-brand-bg);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(20deg); }
+  20% { transform: rotate(-10deg); }
+  30% { transform: rotate(20deg); }
+  40% { transform: rotate(-6deg); }
+  50% { transform: rotate(14deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-wave {
+  animation: wave 2.5s ease-in-out infinite;
+}
+
+.scrolling-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: fit-content;
+}
+
+.scrolling-track:hover {
+  animation-play-state: paused;
 }

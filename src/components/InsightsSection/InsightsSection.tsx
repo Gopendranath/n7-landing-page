@@ -1,3 +1,5 @@
+import LinkWithArrow from "../LinkWithArrow"
+
 const InsightsSection = () => {
   return (
     <section className="bg-[#000D12]">
@@ -10,14 +12,14 @@ const InsightsSection = () => {
                   <circle cx="336.614" cy="438.614" r="278.386" fill="url(#paint0_linear_24_4202)"/>
                 </g>
                 <defs>
-                  <filter id="filter0_f_24_4202" x="-141.772" y="-39.772" width="956.772" height="956.772" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <filter id="filter0_f_24_4202" x="-141.772" y="-39.772" width="956.772" height="956.772" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                     <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_24_4202"/>
                   </filter>
                   <linearGradient id="paint0_linear_24_4202" x1="191.444" y1="-426.899" x2="743.159" y2="-295.127" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#00B4FD"/>
-                    <stop offset="1" stop-color="#003ACE"/>
+                    <stop stopColor="#00B4FD"/>
+                    <stop offset="1" stopColor="#003ACE"/>
                   </linearGradient>
                 </defs>
               </svg>
@@ -89,15 +91,7 @@ const InsightsSection = () => {
                     READ MORE
                   </a>
                 </div>
-                <a href="#" className="group inline-flex items-center gap-2 font-chivo-mono text-sm font-medium text-[#00B4FD] mt-4">
-                  <span className="relative">
-                    READ ALL INSIGHTS
-                    <span className="absolute -bottom-0.5 left-0 h-px bg-[#00B4FD] transition-all duration-500 ease-in-out w-[30%] group-hover:w-full" />
-                  </span>
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-500 ease-in-out group-hover:translate-x-0.5">
-                    <path d="M1 6H10.5M6 1.5L10.5 6L6 10.5" stroke="#00B4FD" strokeWidth="0.9" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
+                <LinkWithArrow>READ ALL INSIGHTS</LinkWithArrow>
               </div>
             </div>
           </div>

@@ -46,33 +46,6 @@ const AutoScrollingBanner = () => {
   return (
     <section className="relative bg-white overflow-hidden h-[116px]">
       <div className="relative overflow-hidden w-full h-full">
-        <style>{`
-          @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          @keyframes wave {
-            0% { transform: rotate(0deg); }
-            10% { transform: rotate(20deg); }
-            20% { transform: rotate(-10deg); }
-            30% { transform: rotate(20deg); }
-            40% { transform: rotate(-6deg); }
-            50% { transform: rotate(14deg); }
-            60% { transform: rotate(0deg); }
-            100% { transform: rotate(0deg); }
-          }
-          .animate-wave {
-            animation: wave 2.5s ease-in-out infinite;
-          }
-          .scrolling-track {
-            display: flex;
-            animation: scroll 30s linear infinite;
-            width: fit-content;
-          }
-          .scrolling-track:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
         <div className="scrolling-track h-full items-center">
           {renderGroup(0)}
           {renderGroup(1)}
