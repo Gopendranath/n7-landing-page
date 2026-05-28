@@ -6,14 +6,7 @@ import {
   CtaSectionTwo,
   AutoScrollingBanner,
   SolutionSectionOne,
-  Features,
-  About,
-  Services,
-  Portfolio,
-  Testimonials,
-  Pricing,
-  FAQ,
-  Contact,
+  CaseStudiesSection,
   CtaSection,
   Footer,
 } from './components'
@@ -29,14 +22,7 @@ const App = () => {
         <CtaSectionTwo />
         <AutoScrollingBanner />
         <SolutionSectionOne />
-        <Features />
-        <About />
-        <Services />
-        <Portfolio />
-        <Testimonials />
-        <Pricing />
-        <FAQ />
-        <Contact />
+        <CaseStudiesSection />
       </div>
       <CtaSection />
       <Footer />
